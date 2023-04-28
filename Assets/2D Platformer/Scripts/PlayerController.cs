@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Platformer
 {
@@ -94,6 +95,11 @@ namespace Platformer
             {
                 gameManager.coinsCounter += 1;
                 Destroy(other.gameObject);
+
+            if (gameManager.coinsCounter == 5)
+                {
+                    SceneManager.LoadScene("Victory");
+                }
             }
         }
     }
